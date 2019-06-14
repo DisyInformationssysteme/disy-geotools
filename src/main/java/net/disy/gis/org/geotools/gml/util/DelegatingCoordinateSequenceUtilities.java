@@ -6,36 +6,30 @@ import org.locationtech.jts.geom.CoordinateSequence;
 // NOT_PUBLISHED
 public class DelegatingCoordinateSequenceUtilities {
 
+  private DelegatingCoordinateSequenceUtilities() {}
+
   private static final String DEFAULT_IMPLEMENTATION = "de.disy.gis.gml.org.geotools.adapter.CoordinateSequenceUtilitiesAdapter";
 
   private static ICoordinateSequenceUtilities coordinateSequenceUtilities;
 
+  static {
+    try {
+      final Class<?> clazz = Class.forName(DEFAULT_IMPLEMENTATION);
+      coordinateSequenceUtilities = (ICoordinateSequenceUtilities) clazz.getDeclaredConstructor().newInstance();
+    }
+    catch (Exception e) {
+      throw new RuntimeException(
+          "Can't create default implementation  " + DEFAULT_IMPLEMENTATION,
+          e);
+    }
+  }
+
   public static boolean isCounterClockwise(CoordinateSequence coordinateSequence) {
-    return getCoordinateSequenceUtilities().isCounterClockwise(coordinateSequence);
+    return coordinateSequenceUtilities.isCounterClockwise(coordinateSequence);
   }
 
   public static CoordinateSequence invert(CoordinateSequence coordinateSequence) {
-    return getCoordinateSequenceUtilities().invert(coordinateSequence);
-  }
-
-  public static void setCoordinateSequenceUtilities(
-      ICoordinateSequenceUtilities coordinateSequenceUtilities) {
-    DelegatingCoordinateSequenceUtilities.coordinateSequenceUtilities = coordinateSequenceUtilities;
-  }
-
-  private static ICoordinateSequenceUtilities getCoordinateSequenceUtilities() {
-    if (coordinateSequenceUtilities == null) {
-      try {
-        final Class<?> clazz = Class.forName(DEFAULT_IMPLEMENTATION);
-        coordinateSequenceUtilities = (ICoordinateSequenceUtilities) clazz.getDeclaredConstructor().newInstance();
-      }
-      catch (Exception e) {
-        throw new RuntimeException(
-            "Can't create default implementation  " + DEFAULT_IMPLEMENTATION,
-            e);
-      }
-    }
-    return coordinateSequenceUtilities;
+    return coordinateSequenceUtilities.invert(coordinateSequence);
   }
 
 }
