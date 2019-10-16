@@ -1,6 +1,8 @@
-module net.disy.geotools.gml {
+module net.disy.geotools {
   requires java.logging;
   requires java.xml;
+
+  requires slf4j.api;
 
   requires org.eclipse.xsd;
 
@@ -15,4 +17,11 @@ module net.disy.geotools.gml {
   requires org.geotools.xsd.xsd_gml3;
 
   requires picocontainer;
+
+  exports net.disy.gis.org.geotools.gml.patch;
+  exports net.disy.gis.org.geotools.gml.util;
+  exports net.disy.gis.org.geotools.gml.v2;
+  exports net.disy.gis.org.geotools.gml.v2.bindings;
+  exports net.disy.gis.org.geotools.gml.v3_1_1;
+  exports net.disy.gis.org.geotools.gml.v3_1_1.bindings;
 }
