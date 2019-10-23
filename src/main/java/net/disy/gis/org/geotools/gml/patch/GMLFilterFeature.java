@@ -17,7 +17,6 @@
 package net.disy.gis.org.geotools.gml.patch;
 
 import java.util.Vector;
-import java.util.logging.Logger;
 import org.geotools.feature.simple.SimpleFeatureBuilder;
 import org.geotools.feature.simple.SimpleFeatureTypeBuilder;
 import org.geotools.gml.GMLHandlerFeature;
@@ -45,10 +44,6 @@ import org.xml.sax.helpers.XMLFilterImpl;
 public class GMLFilterFeature extends XMLFilterImpl implements GMLHandlerJTS {
   // private FeatureSchema metadata = new FeatureSchema();
   // Static Globals to handle some expected elements
-
-  /** The logger for the GML module. */
-  private static final Logger LOGGER =
-      org.geotools.util.logging.Logging.getLogger(GMLFilterFeature.class);
 
   /** GML namespace string. */
 
@@ -237,7 +232,6 @@ public class GMLFilterFeature extends XMLFilterImpl implements GMLHandlerJTS {
     characters.setLength(0);
 
     if (insideAttribute) {
-      LOGGER.info("raw att = " + rawAttribute);
       if (tempValue instanceof StringBuffer) {
         ((StringBuffer) tempValue).append(" " + rawAttribute);
       } else {
