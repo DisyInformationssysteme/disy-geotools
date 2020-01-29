@@ -111,10 +111,6 @@ public class GMLConfiguration extends Configuration {
     //add smil depenedncy
     addDependency(new SMIL20Configuration());
     addDependency(new SMIL20LANGConfiguration());
-
-    //add parser properties
-    getProperties().add(Parser.Properties.PARSE_UNKNOWN_ELEMENTS);
-    getProperties().add(Parser.Properties.PARSE_UNKNOWN_ATTRIBUTES);
   }
 
   @Override

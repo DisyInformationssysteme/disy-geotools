@@ -12,7 +12,6 @@ import java.util.Map;
 
 import javax.xml.namespace.QName;
 
-import org.geotools.feature.DefaultFeatureCollections;
 import org.geotools.gml2.FeatureTypeCache;
 import org.geotools.gml2.GML;
 import org.geotools.gml2.bindings.GMLAbstractFeatureCollectionBaseTypeBinding;
@@ -48,7 +47,6 @@ import org.geotools.gml2.bindings.GMLPolygonPropertyTypeBinding;
 import org.geotools.gml2.bindings.GMLPolygonTypeBinding;
 import org.geotools.xlink.XLINKConfiguration;
 import org.geotools.xsd.Configuration;
-import org.geotools.xsd.Parser;
 import org.locationtech.jts.geom.CoordinateSequenceFactory;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.impl.CoordinateArraySequenceFactory;
@@ -92,10 +90,6 @@ public class ModifiedGMLConfiguration extends Configuration {
 
     //add xlink dependency
     addDependency(new XLINKConfiguration());
-
-    //add the parse unknown attributes property, this is mostly for the "fid" attribute
-    getProperties().add(Parser.Properties.PARSE_UNKNOWN_ELEMENTS);
-    getProperties().add(Parser.Properties.PARSE_UNKNOWN_ATTRIBUTES);
   }
 
   @Override
@@ -145,9 +139,7 @@ public class ModifiedGMLConfiguration extends Configuration {
    * <li>{@link CoordinateArraySequenceFactory} under {@link CoordinateSequenceFactory}
    * <li>{@link GeometryFactory}
    * <li>{@link FeatureTypeCache}
-   * <li>{@link DefaultFeatureCollections}
    * </ul>
-   * </p>
    */
   @Override
   public void configureContext(MutablePicoContainer container) {
@@ -155,6 +147,5 @@ public class ModifiedGMLConfiguration extends Configuration {
     container.registerComponentInstance(featureTypeCache);
     container.registerComponentInstance(CoordinateSequenceFactory.class, CoordinateArraySequenceFactory.instance());
     container.registerComponentImplementation(GeometryFactory.class);
-    container.registerComponentImplementation(DefaultFeatureCollections.class);
   }
 }

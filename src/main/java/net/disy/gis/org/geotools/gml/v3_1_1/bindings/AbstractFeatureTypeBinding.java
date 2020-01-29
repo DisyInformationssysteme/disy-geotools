@@ -25,7 +25,6 @@ import org.geotools.xsd.ElementInstance;
 import org.geotools.xsd.Node;
 import org.geotools.xsd.SchemaIndex;
 import org.opengis.feature.Feature;
-import org.opengis.feature.simple.SimpleFeature;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 
@@ -57,7 +56,7 @@ import org.w3c.dom.Element;
  *
  *          </code>
  *         </pre>
- * </p>
+ * <p>
  *
  * @generated
  *
@@ -129,15 +128,12 @@ public class AbstractFeatureTypeBinding extends AbstractComplexBinding {
 
   @Override
   public Element encode(Object object, Document document, Element value) throws Exception {
-    return GML3EncodingUtils.AbstractFeatureType_encode(object, document, value, idSet);
+    return GML3EncodingUtils.INSTANCE.AbstractFeatureTypeEncode(object, document, value, idSet);
   }
 
   @Override
   public List getProperties(Object object, XSDElementDeclaration element) throws Exception {
-    return GML3EncodingUtils.AbstractFeatureType_getProperties(
-        object,
-        element,
-        schemaIndex,
-        configuration);
+    return GML3EncodingUtils.INSTANCE
+        .AbstractFeatureTypeGetProperties(object, element, schemaIndex, configuration);
   }
 }
