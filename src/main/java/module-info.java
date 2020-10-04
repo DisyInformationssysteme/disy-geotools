@@ -2,7 +2,7 @@ module net.disy.geotools {
   requires java.logging;
   requires java.xml;
 
-  requires slf4j.api;
+  requires org.slf4j;
 
   requires org.eclipse.xsd;
 
