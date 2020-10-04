@@ -4,13 +4,13 @@
   <name>disy-geotools</name>
   <groupId>net.disy</groupId>
   <artifactId>disy-geotools</artifactId>
-  <version>0.4-SNAPSHOT</version>
+  <version>0.5-SNAPSHOT</version>
   <packaging>jar</packaging>
 
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
-    <geotools.version>22.3</geotools.version>
+    <geotools.version>23.3</geotools.version>
   </properties>
 
   <dependencies>
