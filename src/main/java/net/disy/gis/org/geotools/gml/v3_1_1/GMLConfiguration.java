@@ -12,6 +12,7 @@ import java.util.Map;
 
 import javax.xml.namespace.QName;
 
+import org.geotools.api.feature.type.FeatureType;
 import org.geotools.gml2.FeatureTypeCache;
 import org.geotools.gml2.bindings.GMLCoordTypeBinding;
 import org.geotools.gml2.bindings.GMLCoordinatesTypeBinding;
@@ -46,11 +47,9 @@ import org.geotools.gml3.smil.SMIL20LANGConfiguration;
 import org.geotools.xlink.XLINKConfiguration;
 import org.geotools.xs.XS;
 import org.geotools.xsd.Configuration;
-import org.geotools.xsd.Parser;
 import org.locationtech.jts.geom.CoordinateSequenceFactory;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.impl.CoordinateArraySequenceFactory;
-import org.opengis.feature.type.FeatureType;
 import org.picocontainer.MutablePicoContainer;
 
 import net.disy.gis.org.geotools.gml.v3_1_1.bindings.AbstractFeatureCollectionTypeBinding;

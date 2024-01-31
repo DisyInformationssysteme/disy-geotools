@@ -20,12 +20,12 @@ import java.util.List;
 
 import javax.xml.namespace.QName;
 
+import org.geotools.api.feature.Feature;
+import org.geotools.api.feature.simple.SimpleFeature;
 import org.geotools.gml3.GML;
 import org.geotools.xsd.AbstractComplexBinding;
 import org.geotools.xsd.ElementInstance;
 import org.geotools.xsd.Node;
-import org.opengis.feature.Feature;
-import org.opengis.feature.simple.SimpleFeature;
 
 public class AbstractFeatureCollectionTypeBinding extends AbstractComplexBinding {
 

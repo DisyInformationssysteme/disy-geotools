@@ -12,6 +12,7 @@ import java.util.Map;
 
 import javax.xml.namespace.QName;
 
+import org.geotools.api.feature.type.FeatureType;
 import org.geotools.gml2.FeatureTypeCache;
 import org.geotools.gml2.GML;
 import org.geotools.gml2.bindings.GMLAbstractFeatureCollectionBaseTypeBinding;
@@ -50,7 +51,6 @@ import org.geotools.xsd.Configuration;
 import org.locationtech.jts.geom.CoordinateSequenceFactory;
 import org.locationtech.jts.geom.GeometryFactory;
 import org.locationtech.jts.geom.impl.CoordinateArraySequenceFactory;
-import org.opengis.feature.type.FeatureType;
 import org.picocontainer.MutablePicoContainer;
 
 import net.disy.gis.org.geotools.gml.v2.bindings.GMLAbstractFeatureCollectionTypeBinding;

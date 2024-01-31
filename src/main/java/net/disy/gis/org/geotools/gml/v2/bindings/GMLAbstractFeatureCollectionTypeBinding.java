@@ -2,9 +2,9 @@ package net.disy.gis.org.geotools.gml.v2.bindings;
 
 import java.util.List;
 
+import org.geotools.api.feature.simple.SimpleFeature;
 import org.geotools.xsd.ElementInstance;
 import org.geotools.xsd.Node;
-import org.opengis.feature.simple.SimpleFeature;
 
 public class GMLAbstractFeatureCollectionTypeBinding
     extends org.geotools.gml2.bindings.GMLAbstractFeatureCollectionTypeBinding {

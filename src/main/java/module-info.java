@@ -8,8 +8,8 @@ module net.disy.geotools {
 
   requires org.locationtech.jts;
 
+  requires org.geotools.api;
   requires org.geotools.main;
-  requires org.geotools.opengis;
   requires org.geotools.metadata;
   requires org.geotools.xml;
   requires org.geotools.xsd.xsd_core;
